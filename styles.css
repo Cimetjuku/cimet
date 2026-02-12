@@ -1,0 +1,2902 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif; /* Fallback: Arial, sans-serif */
+    line-height: 1.6;
+    color: #333;
+    background-color: #f8f9fa;
+    transition: all 0.3s ease;
+}
+
+h1, h2, h3 {
+    font-weight: 700;
+    color: #155991;
+}
+
+p {
+    margin-bottom: 1rem;
+    color: #155991;
+}
+
+a {
+    text-decoration: none;
+    color: #007bff;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: #0056b3;
+}
+
+/* Header & Navigation */
+header {
+    background-color: #007bff;
+    color: white;
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav-links a {
+    color: white;
+    font-weight: 500;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.nav-links a:hover {
+    color: #e0e0e0;
+    transform: scale(1.05);
+}
+
+/* Hero Section (Banner - White with Blue Header Under It) */
+.hero-section {
+    background-color: rgba(97, 75, 221, 0.993); /* White banner as you liked */
+    color: hsl(0, 0%, 100%);
+    text-align: center;
+    padding: 4rem 1rem;
+    animation: fadeIn 1s ease-in; /* Subtle fade-in animation */
+}
+
+.hero-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    animation: typing 3s steps(30, end), blink-caret 0.75s step-end infinite; /* Typing effect animation */
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    animation: slideUp 1.5s ease-out; /* Slide-up animation */
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    animation: slideUp 2s ease-out; /* Slide-up animation for buttons */
+}
+
+.cta-primary {
+    background-color: #007bff;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 5px;
+    font-weight: 500;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.cta-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.cta-secondary {
+    background-color: transparent;
+    color: #007bff;
+    padding: 0.75rem 1.5rem;
+    border: 2px solid #007bff;
+    border-radius: 5px;
+    font-weight: 500;
+    transition: background-color 0.3s;
+}
+
+.cta-secondary:hover {
+    background-color: #007bff;
+    color: white;
+}
+
+/* Sections */
+section {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+}
+
+/* Card-Based Layouts */
+.features-grid, .about-cards, .subjects-grid, .why-choose-grid, .faq-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.feature-card, .about-card, .subject-card, .why-card, .faq-item {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.feature-card:hover, .about-card:hover, .subject-card:hover, .why-card:hover, .feature-card.lift-hover, .faq-item.expand-hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.faq-item h3 {
+    margin-bottom: 0.5rem;
+}
+
+/* Schedule & Fees */
+.schedule-fees {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.schedule-card, .fees-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
+
+ul {
+    list-style: none;
+}
+
+ul li {
+    margin-bottom: 0.5rem;
+}
+
+/* Registration Form (on register.html) */
+.registration-form {
+    max-width: 600px;
+    margin: 2rem auto;
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
+
+.registration-form h1 {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.registration-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.registration-form input, .registration-form select, .registration-form button {
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: box-shadow 0.3s;
+}
+
+.registration-form input:focus, .registration-form select:focus {
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.3);
+}
+
+.registration-form button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.registration-form button:hover {
+    background-color: #0056b3;
+}
+
+/* Contact Section (on contact.html) */
+.contact-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.contact-details {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
+
+.map-container {
+    height: 300px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* WhatsApp Float Button */
+.whatsapp-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25d366;
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    transition: transform 0.3s;
+    z-index: 1000;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+}
+
+/* Footer */
+footer {
+    background-color: #007bff;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+}
+
+footer a {
+    color: white;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in, .fade-in-up {
+    animation: fadeIn 1s ease-in;
+}
+
+.slide-up {
+    animation: slideUp 0.8s ease-out;
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.slide-in {
+    animation: slideIn 0.8s ease-out;
+}
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateX(-20px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+.slide-down {
+    animation: slideDown 0.8s ease-out;
+}
+
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.bounce-in {
+    animation: bounceIn 1s ease-out;
+}
+
+@keyframes bounceIn {
+    0% { opacity: 0; transform: scale(0.3); }
+    50% { opacity: 1; transform: scale(1.05); }
+    70% { transform: scale(0.9); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+.typing-effect {
+    overflow: hidden;
+    border-right: 2px solid #00d4ff;
+    white-space: nowrap;
+    animation: typing 3s steps(30, end), blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: #00d4ff; }
+}
+
+/* Respect user preferences for reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Hamburger Menu Styles */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0.5rem;
+    z-index: 1001;
+}
+
+.bar {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 3px 0;
+    border-radius: 2px;
+}
+
+/* Mobile Nav Toggle */
+.nav-links.active {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #007bff;
+    padding: 1rem 0;
+    animation: slideDown 0.3s ease;
+    z-index: 1000;
+}
+
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* CTA Buttons (Enhanced for Mobile) */
+.cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.cta-primary, .cta-secondary {
+    padding: 0.75rem 1.5rem;
+    border-radius: 5px;
+    font-weight: 500;
+    font-size: 1rem;
+    min-width: 120px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.cta-primary:hover, .cta-secondary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Form Buttons (e.g., Pay/Confirm) */
+.registration-form button {
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    min-height: 44px;
+    width: 100%;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+/* Enhanced Mobile Responsiveness */
+@media (max-width: 1024px) {
+    .hero-content h1 {
+        font-size: 2.2rem;
+    }
+    .features-grid, .about-cards, .subjects-grid, .why-choose-grid, .faq-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+    .nav-links {
+        display: none;
+    }
+    .nav-container {
+        position: relative;
+    }
+    .logo {
+        font-size: 1.5rem;
+    }
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+    .hero-content p {
+        font-size: 1rem;
+    }
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+    }
+    .features-grid, .about-cards, .subjects-grid, .why-choose-grid, .faq-grid {
+        grid-template-columns: 1fr;
+    }
+    .schedule-fees {
+        grid-template-columns: 1fr;
+    }
+    .contact-info {
+        grid-template-columns: 1fr;
+    }
+    .registration-form {
+        padding: 1rem;
+    }
+    .whatsapp-float {
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-section {
+        padding: 2rem 1rem;
+    }
+    h2 {
+        font-size: 1.5rem;
+    }
+    .feature-card, .about-card, .subject-card, .why-card, .faq-item {
+        padding: 1rem;
+    }
+    .first-para {
+        color: #333;
+    }
+    .exams-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+    }
+    .exam-card {
+        background: white;
+        padding: 1.5rem;
+        border-radius: 8px;
+        border: 1px solid #ddd;
+        transition: transform 0.3s;
+    }
+    .exam-card:hover {
+        transform: translateY(-5px);
+    }
+}
+
+.hero-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: white; /* White text */
+    display: inline-block;
+    animation: typing 3s steps(30, end), blink-caret 0.75s step-end infinite;
+}
+
+/* Mobile Responsiveness for h1 */
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 1.8rem;
+    }
+}
+
+
+/* About Us Page Styles */
+.about-section {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 2rem 1rem;
+    text-align: center;
+    background-color: white;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    color: #155991;
+    margin-bottom: 1rem;
+}
+
+.about-intro {
+    font-size: 1.2rem;
+    color: #155991;
+    margin-bottom: 2rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.about-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.about-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.about-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.about-card h3 {
+    color: #007bff;
+    margin-bottom: 0.5rem;
+}
+
+.about-card p {
+    color: #155991;
+}
+
+/* CTA Button for About Page */
+.cta-primary {
+    background-color: #007bff;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 5px;
+    font-weight: 500;
+    text-decoration: none;
+    display: inline-block;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.cta-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Mobile Responsiveness for About Page */
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 2rem;
+    }
+    .about-intro {
+        font-size: 1rem;
+    }
+    .about-cards {
+        grid-template-columns: 1fr;
+    }
+    .about-card {
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .about-section {
+        padding: 1rem;
+    }
+    .section-title {
+        font-size: 1.8rem;
+    }
+    .about-intro {
+        font-size: 0.9rem;
+    }
+}
+
+/* Contact Us Page Styles */
+.contact-info {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 2rem 1rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    background-color: white;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
+
+.contact-details {
+    padding: 1.5rem;
+    background: white;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+.contact-details h1 {
+    font-size: 2.5rem;
+    color: #155991;
+    margin-bottom: 1rem;
+}
+
+.contact-details p {
+    color: #155991;
+    margin-bottom: 0.5rem;
+}
+
+.contact-details strong {
+    color: #007bff;
+}
+
+.map-container {
+    height: 300px;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid #ddd;
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* CTA Button for Contact Page */
+.cta-secondary {
+    background-color: transparent;
+    color: #007bff;
+    padding: 0.75rem 1.5rem;
+    border: 2px solid #007bff;
+    border-radius: 5px;
+    font-weight: 500;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.cta-secondary:hover {
+    background-color: #007bff;
+    color: white;
+}
+
+/* Mobile Responsiveness for Contact Page */
+@media (max-width: 768px) {
+    .contact-info {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    .contact-details h1 {
+        font-size: 2rem;
+    }
+    .map-container {
+        height: 250px;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-info {
+        padding: 1rem;
+    }
+    .contact-details {
+        padding: 1rem;
+    }
+    .contact-details h1 {
+        font-size: 1.8rem;
+    }
+    .map-container {
+        height: 200px;
+    }
+}
+
+/* Contact Us Page Styles */
+.contact-info {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 2rem 1rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; /* Three columns: details, form, map */
+    gap: 2rem;
+    background-color: white;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
+
+.contact-details {
+    padding: 1.5rem;
+    background: white;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+.contact-details h1 {
+    font-size: 2.5rem;
+    color: #155991;
+    margin-bottom: 1rem;
+}
+
+.contact-details p {
+    color: #155991;
+    margin-bottom: 0.5rem;
+}
+
+.contact-details strong {
+    color: #007bff;
+}
+
+.contact-form {
+    padding: 1.5rem;
+    background: white;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+.contact-form h2 {
+    font-size: 2rem;
+    color: #155991;
+    margin-bottom: 1rem;
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.contact-form label {
+    font-weight: 500;
+    color: #155991;
+}
+
+.contact-form input, .contact-form textarea {
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+.contact-form input:focus, .contact-form textarea:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+}
+
+.contact-form button {
+    background-color: #007bff;
+    color: white;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 5px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.contact-form button:hover {
+    background-color: #0056b3;
+}
+
+.map-container {
+    height: 300px;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid #ddd;
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* CTA Button for Contact Page */
+.cta-secondary {
+    background-color: transparent;
+    color: #007bff;
+    padding: 0.75rem 1.5rem;
+    border: 2px solid #007bff;
+    border-radius: 5px;
+    font-weight: 500;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.cta-secondary:hover {
+    background-color: #007bff;
+    color: white;
+}
+
+/* Mobile Responsiveness for Contact Page */
+@media (max-width: 768px) {
+    .contact-info {
+        grid-template-columns: 1fr; /* Stack vertically on mobile */
+        gap: 1rem;
+    }
+    .contact-details h1, .contact-form h2 {
+        font-size: 2rem;
+    }
+    .map-container {
+        height: 250px;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-info {
+        padding: 1rem;
+    }
+    .contact-details, .contact-form {
+        padding: 1rem;
+    }
+    .contact-details h1, .contact-form h2 {
+        font-size: 1.8rem;
+    }
+    .map-container {
+        height: 200px;
+    }
+}
+
+/* Contact Us Page Styles */
+.contact-info {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 2rem 1rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; /* Three columns: details, form, map */
+    gap: 2rem;
+    background: linear-gradient(135deg, #007bff, #00d4ff, #28a745, #ffc107); /* Colorful gradient background */
+    background-size: 400% 400%;
+    animation: gradientShift 10s ease infinite; /* Dynamic shifting gradient */
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+@keyframes gradientShift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+.contact-details, .contact-form, .map-container {
+    background: rgba(255, 255, 255, 0.95); /* Semi-transparent white for contrast */
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.contact-details:hover, .contact-form:hover, .map-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.contact-details.glow, .contact-form.glow, .map-container.glow {
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.5); /* Subtle glow */
+}
+
+.contact-details {
+    padding: 1.5rem;
+    text-align: left;
+    border-left: 5px solid #007bff; /* Colorful accent */
+}
+
+.contact-details h1 {
+    font-size: 2.5rem;
+    color: #007bff; /* Blue for vibrancy */
+    margin-bottom: 1rem;
+}
+
+.contact-details p {
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.contact-details strong {
+    color: #28a745; /* Green for emphasis */
+}
+
+.contact-form {
+    padding: 1.5rem;
+    text-align: left;
+    border-left: 5px solid #ffc107; /* Gold accent */
+}
+
+.contact-form h2 {
+    font-size: 2rem;
+    color: #007bff;
+    margin-bottom: 1rem;
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.contact-form label {
+    font-weight: 500;
+    color: #333;
+}
+
+.contact-form input, .contact-form textarea {
+    padding: 0.75rem;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.contact-form input:focus, .contact-form textarea:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.5); /* Colorful glow */
+}
+
+.contact-form button {
+    background: linear-gradient(45deg, #007bff, #00d4ff); /* Colorful gradient button */
+    color: white;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 8px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.contact-form button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(0, 123, 255, 0.6);
+}
+
+/* Star Rating Styles */
+.star-rating {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    gap: 0.5rem;
+}
+
+.star-rating input {
+    display: none;
+}
+
+.star-rating label {
+    font-size: 2rem;
+    color: #ddd;
+    cursor: pointer;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.star-rating input:checked ~ label,
+.star-rating label:hover,
+.star-rating label:hover ~ label {
+    color: #ffc107; /* Gold for stars */
+    transform: scale(1.2); /* Dynamic scale */
+    animation: pulse 0.5s ease; /* Pulsing animation */
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+}
+
+.map-container {
+    height: 300px;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 2px solid #28a745; /* Green border for map */
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* CTA Button for Contact Page */
+.cta-secondary {
+    background: linear-gradient(45deg, #28a745, #20c997); /* Green gradient */
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 500;
+    text-decoration: none;
+    display: inline-block;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.cta-secondary:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(40, 167, 69, 0.6);
+}
+
+/* WhatsApp Float Button */
+.whatsapp-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: linear-gradient(45deg, #25d366, #20c997); /* Colorful green */
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+    transition: transform 0.3s, box-shadow 0.3s;
+    z-index: 1000;
+    animation: pulse 2s infinite;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(37, 211, 102, 0.8);
+}
+
+/* Mobile Responsiveness for Contact Page */
+@media (max-width: 768px) {
+    .contact-info {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        background-size: 200% 200%; /* Adjust gradient for mobile */
+    }
+    .contact-details h1, .contact-form h2 {
+        font-size: 2rem;
+    }
+    .star-rating label {
+        font-size: 1.8rem;
+    }
+    .map-container {
+        height: 250px;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-info {
+        padding: 1rem;
+    }
+    .contact-details, .contact-form {
+        padding: 1rem;
+    }
+    .contact-details h1, .contact-form h2 {
+        font-size: 1.8rem;
+    }
+    .star-rating label {
+        font-size: 1.5rem;
+    }
+    .map-container {
+        height: 200px;
+    }
+}
+
+
+/* Exams & Tests Page Styles */
+.exams-section {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 2rem 1rem;
+    background: linear-gradient(135deg, #007bff, #00d4ff, #28a745, #ffc107); /* Colorful gradient background */
+    background-size: 400% 400%;
+    animation: gradientShift 10s ease infinite; /* Dynamic shifting gradient */
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+}
+
+@keyframes gradientShift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+.section-title {
+    font-size: 2.5rem;
+    color: white; /* White for contrast on gradient */
+    margin-bottom: 1rem;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.exams-intro {
+    font-size: 1.2rem;
+    color: white;
+    margin-bottom: 2rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.exams-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.exam-card {
+    background: rgba(255, 255, 255, 0.95); /* Semi-transparent white for contrast */
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    border-left: 5px solid #007bff; /* Colorful accent */
+}
+
+.exam-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.exam-card.glow {
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.5); /* Subtle glow */
+}
+
+.exam-card h3 {
+    color: #007bff;
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+}
+
+.exam-card p {
+    color: #333;
+}
+
+/* CTA Button for Exams Page */
+.cta-primary {
+    background: linear-gradient(45deg, #007bff, #00d4ff); /* Colorful gradient button */
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 500;
+    text-decoration: none;
+    display: inline-block;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.cta-primary:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(0, 123, 255, 0.6);
+}
+
+/* WhatsApp Float Button */
+.whatsapp-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: linear-gradient(45deg, #25d366, #20c997); /* Colorful green */
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+    transition: transform 0.3s, box-shadow 0.3s;
+    z-index: 1000;
+    animation: pulse 2s infinite;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(37, 211, 102, 0.8);
+}
+
+/* Mobile Responsiveness for Exams Page */
+@media (max-width: 768px) {
+    .exams-section {
+        padding: 1.5rem 1rem;
+        background-size: 200% 200%; /* Adjust gradient for mobile */
+    }
+    .section-title {
+        font-size: 2rem;
+    }
+    .exams-intro {
+        font-size: 1rem;
+    }
+    .exams-grid {
+        grid-template-columns: 1fr;
+    }
+    .exam-card {
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .exams-section {
+        padding: 1rem;
+    }
+    .section-title {
+        font-size: 1.8rem;
+    }
+    .exams-intro {
+        font-size: 0.9rem;
+    }
+    .exam-card h3 {
+        font-size: 1.3rem;
+    }
+    .whatsapp-float {
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
+    }
+}
+
+
+/* About Us Page Styles */
+.about-section {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 2rem 1rem;
+    background: linear-gradient(135deg, #007bff, #00d4ff, #28a745, #ffc107); /* Colorful gradient background */
+    background-size: 400% 400%;
+    animation: gradientShift 10s ease infinite; /* Dynamic shifting gradient */
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+}
+
+@keyframes gradientShift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+.section-title {
+    font-size: 2.5rem;
+    color: white; /* White for contrast on gradient */
+    margin-bottom: 1rem;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.about-intro {
+    font-size: 1.2rem;
+    color: white;
+    margin-bottom: 2rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.about-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.about-card {
+    background: rgba(255, 255, 255, 0.95); /* Semi-transparent white for contrast */
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    border-left: 5px solid #007bff; /* Colorful accent */
+}
+
+.about-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.about-card.glow {
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.5); /* Subtle glow */
+}
+
+.about-card h3 {
+    color: #007bff;
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+}
+
+.about-card p {
+    color: #333;
+}
+
+/* CTA Button for About Page */
+.cta-primary {
+    background: linear-gradient(45deg, #007bff, #00d4ff); /* Colorful gradient button */
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 500;
+    text-decoration: none;
+    display: inline-block;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.cta-primary:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(0, 123, 255, 0.6);
+}
+
+/* WhatsApp Float Button */
+.whatsapp-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: linear-gradient(45deg, #25d366, #20c997); /* Colorful green */
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+    transition: transform 0.3s, box-shadow 0.3s;
+    z-index: 1000;
+    animation: pulse 2s infinite;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(37, 211, 102, 0.8);
+}
+
+/* Mobile Responsiveness for About Page */
+@media (max-width: 768px) {
+    .about-section {
+        padding: 1.5rem 1rem;
+        background-size: 200% 200%; /* Adjust gradient for mobile */
+    }
+    .section-title {
+        font-size: 2rem;
+    }
+    .about-intro {
+        font-size: 1rem;
+    }
+    .about-cards {
+        grid-template-columns: 1fr;
+    }
+    .about-card {
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .about-section {
+        padding: 1rem;
+    }
+    .section-title {
+        font-size: 1.8rem;
+    }
+    .about-intro {
+        font-size: 0.9rem;
+    }
+    .about-card h3 {
+        font-size: 1.3rem;
+    }
+    .whatsapp-float {
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
+    }
+}
+
+
+/* Schedule & Fees Page Styles */
+.schedule-section {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 2rem 1rem;
+    background: linear-gradient(135deg, #007bff, #00d4ff, #28a745, #ffc107); /* Colorful gradient background */
+    background-size: 400% 400%;
+    animation: gradientShift 10s ease infinite; /* Dynamic shifting gradient */
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+}
+
+@keyframes gradientShift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+.section-title {
+    font-size: 2.5rem;
+    color: white; /* White for contrast on gradient */
+    margin-bottom: 1rem;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.schedule-fees {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.schedule-card, .fees-card {
+    background: rgba(255, 255, 255, 0.95); /* Semi-transparent white for contrast */
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    border-left: 5px solid #007bff; /* Colorful accent */
+}
+
+.schedule-card:hover, .fees-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.schedule-card.glow, .fees-card.glow {
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.5); /* Subtle glow */
+}
+
+.schedule-card h3, .fees-card h3 {
+    color: #007bff;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.schedule-card ul {
+    list-style: none;
+    padding: 0;
+}
+
+.schedule-card li {
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.schedule-card strong {
+    color: #28a745; /* Green for emphasis */
+}
+
+.fees-card p {
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.fees-card strong {
+    color: #ffc107; /* Gold for pricing */
+}
+
+/* CTA Button for Schedule Page */
+.cta-primary {
+    background: linear-gradient(45deg, #007bff, #00d4ff); /* Colorful gradient button */
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 500;
+    text-decoration: none;
+    display: inline-block;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.cta-primary:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(0, 123, 255, 0.6);
+}
+
+/* WhatsApp Float Button */
+.whatsapp-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: linear-gradient(45deg, #25d366, #20c997); /* Colorful green */
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+    transition: transform 0.3s, box-shadow 0.3s;
+    z-index: 1000;
+    animation: pulse 2s infinite;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(37, 211, 102, 0.8);
+}
+
+/* Mobile Responsiveness for Schedule Page */
+@media (max-width: 768px) {
+    .schedule-section {
+        padding: 1.5rem 1rem;
+        background-size: 200% 200%; /* Adjust gradient for mobile */
+    }
+    .section-title {
+        font-size: 2rem;
+    }
+    .schedule-fees {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    .schedule-card, .fees-card {
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .schedule-section {
+        padding: 1rem;
+    }
+    .section-title {
+        font-size: 1.8rem;
+    }
+    .schedule-card h3, .fees-card h3 {
+        font-size: 1.3rem;
+    }
+    .whatsapp-float {
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
+    }
+}
+
+
+/* Why Choose Us Page Styles */
+.why-choose-section {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 2rem 1rem;
+    background: linear-gradient(135deg, #007bff, #00d4ff, #28a745, #ffc107); /* Colorful gradient background */
+    background-size: 400% 400%;
+    animation: gradientShift 10s ease infinite; /* Dynamic shifting gradient */
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+}
+
+@keyframes gradientShift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+.section-title {
+    font-size: 2.5rem;
+    color: white; /* White for contrast on gradient */
+    margin-bottom: 1rem;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.why-choose-intro {
+    font-size: 1.2rem;
+    color: white;
+    margin-bottom: 2rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.why-choose-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.why-card {
+    background: rgba(255, 255, 255, 0.95); /* Semi-transparent white for contrast */
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    border-left: 5px solid #007bff; /* Colorful accent */
+}
+
+.why-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.why-card.glow {
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.5); /* Subtle glow */
+}
+
+.why-card h3 {
+    color: #007bff;
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+}
+
+.why-card p {
+    color: #333;
+}
+
+/* CTA Button for Why Choose Us Page */
+.cta-primary {
+    background: linear-gradient(45deg, #007bff, #00d4ff); /* Colorful gradient button */
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 500;
+    text-decoration: none;
+    display: inline-block;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.cta-primary:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(0, 123, 255, 0.6);
+}
+
+/* WhatsApp Float Button */
+.whatsapp-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: linear-gradient(45deg, #25d366, #20c997); /* Colorful green */
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+    transition: transform 0.3s, box-shadow 0.3s;
+    z-index: 1000;
+    animation: pulse 2s infinite;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(37, 211, 102, 0.8);
+}
+
+/* Mobile Responsiveness for Why Choose Us Page */
+@media (max-width: 768px) {
+    .why-choose-section {
+        padding: 1.5rem 1rem;
+        background-size: 200% 200%; /* Adjust gradient for mobile */
+    }
+    .section-title {
+        font-size: 2rem;
+    }
+    .why-choose-intro {
+        font-size: 1rem;
+    }
+    .why-choose-grid {
+        grid-template-columns: 1fr;
+    }
+    .why-card {
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .why-choose-section {
+        padding: 1rem;
+    }
+    .section-title {
+        font-size: 1.8rem;
+    }
+    .why-choose-intro {
+        font-size: 0.9rem;
+    }
+    .why-card h3 {
+        font-size: 1.3rem;
+    }
+    .whatsapp-float {
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
+    }
+}
+
+/* Subjects Page Styles */
+.subjects-section {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 2rem 1rem;
+    background: linear-gradient(135deg, #007bff, #00d4ff, #28a745, #ffc107); /* Colorful gradient background */
+    background-size: 400% 400%;
+    animation: gradientShift 10s ease infinite; /* Dynamic shifting gradient */
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+}
+
+@keyframes gradientShift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+.section-title {
+    font-size: 2.5rem;
+    color: white; /* White for contrast on gradient */
+    margin-bottom: 1rem;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.subjects-intro {
+    font-size: 1.2rem;
+    color: white;
+    margin-bottom: 2rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.subjects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.subject-card {
+    background: rgba(255, 255, 255, 0.95); /* Semi-transparent white for contrast */
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    border-left: 5px solid #007bff; /* Colorful accent */
+}
+
+.subject-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.subject-card.glow {
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.5); /* Subtle glow */
+}
+
+.subject-card h3 {
+    color: #007bff;
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+}
+
+.subject-card p {
+    color: #333;
+}
+
+/* CTA Button for Subjects Page */
+.cta-primary {
+    background: linear-gradient(45deg, #007bff, #00d4ff); /* Colorful gradient button */
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 500;
+    text-decoration: none;
+    display: inline-block;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.cta-primary:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(0, 123, 255, 0.6);
+}
+
+/* WhatsApp Float Button */
+.whatsapp-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: linear-gradient(45deg, #25d366, #20c997); /* Colorful green */
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+    transition: transform 0.3s, box-shadow 0.3s;
+    z-index: 1000;
+    animation: pulse 2s infinite;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(37, 211, 102, 0.8);
+}
+
+/* Mobile Responsiveness for Subjects Page */
+@media (max-width: 768px) {
+    .subjects-section {
+        padding: 1.5rem 1rem;
+        background-size: 200% 200%; /* Adjust gradient for mobile */
+    }
+    .section-title {
+        font-size: 2rem;
+    }
+    .subjects-intro {
+        font-size: 1rem;
+    }
+    .subjects-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+    .subject-card {
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .subjects-section {
+        padding: 1rem;
+    }
+    .section-title {
+        font-size: 1.8rem;
+    }
+    .subjects-intro {
+        font-size: 0.9rem;
+    }
+    .subject-card h3 {
+        font-size: 1.3rem;
+    }
+    .whatsapp-float {
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
+    }
+}
+
+
+/* Register Page Styles */
+.register-section {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem 1rem;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    color: #007bff; /* Blue like JAMB */
+    margin-bottom: 1rem;
+}
+
+.register-intro {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 2rem;
+}
+
+.registration-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    text-align: left;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.registration-form label {
+    font-weight: 500;
+    color: #333;
+}
+
+.registration-form input, .registration-form select {
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+.registration-form input:focus, .registration-form select:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+.registration-form button {
+    background-color: #007bff;
+    color: white;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 4px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.registration-form button:hover {
+    background-color: #0056b3;
+}
+
+/* WhatsApp Float Button */
+.whatsapp-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25d366;
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+    z-index: 1000;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+}
+
+/* Mobile Responsiveness for Register Page */
+@media (max-width: 768px) {
+    .register-section {
+        padding: 1.5rem 1rem;
+    }
+    .section-title {
+        font-size: 2rem;
+    }
+    .register-intro {
+        font-size: 1rem;
+    }
+    .registration-form {
+        gap: 0.75rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .register-section {
+        padding: 1rem;
+    }
+    .section-title {
+        font-size: 1.8rem;
+    }
+    .register-intro {
+        font-size: 0.9rem;
+    }
+    .whatsapp-float {
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
+    }
+}
+#account-details {
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 1rem;
+    margin-top: 1rem;
+    text-align: left;
+}
+
+#account-details p {
+    margin: 0.5rem 0;
+    color: #333;
+}
+
+
+/* Admin Panel Styles */
+.admin-section {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 2rem 1rem;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+#login-form {
+    text-align: center;
+}
+
+#login-form input {
+    display: block;
+    margin: 1rem auto;
+    padding: 0.75rem;
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+#login-form button {
+    background-color: #007bff;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+#login-form button:hover {
+    background-color: #0056b3;
+}
+
+.admin-nav {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.tab-btn {
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.tab-btn.active {
+    background-color: #007bff;
+    color: white;
+}
+
+.tab-content {
+    margin-top: 2rem;
+}
+
+.tab-content h2 {
+    color: #007bff;
+    margin-bottom: 1rem;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 0.75rem;
+    text-align: left;
+}
+
+th {
+    background-color: #f8f9fa;
+    font-weight: 500;
+}
+
+tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    max-width: 600px;
+}
+
+form input, form select, form textarea {
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+form textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+form button[type="submit"] {
+    align-self: flex-start;
+}
+
+/* Mobile Responsiveness for Admin Panel */
+@media (max-width: 768px) {
+    .admin-section {
+        padding: 1.5rem 1rem;
+    }
+    .admin-nav {
+        flex-direction: column;
+    }
+    .tab-btn {
+        width: 100%;
+    }
+    table {
+        font-size: 0.9rem;
+    }
+    th, td {
+        padding: 0.5rem;
+    }
+    form {
+        max-width: 100%;
+    }
+    #login-form input {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    .admin-section {
+        padding: 1rem;
+    }
+    .admin-nav {
+        gap: 0.5rem;
+    }
+    table {
+        font-size: 0.8rem;
+    }
+    button {
+        padding: 0.5rem;
+        font-size: 0.8rem;
+    }
+}
+
+/* Admin Panel Styles - Polished and Professional */
+.admin-section {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    font-family: 'Roboto', sans-serif;
+}
+
+#login-form {
+    text-align: center;
+    padding: 2rem;
+}
+
+#login-form h1 {
+    color: #007bff;
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+}
+
+#login-form input {
+    display: block;
+    margin: 1rem auto;
+    padding: 0.75rem;
+    width: 100%;
+    max-width: 350px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    background-color: #f9f9f9;
+}
+
+#login-form button {
+    background-color: #007bff;
+    color: white;
+    padding: 0.75rem 2rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+#login-form button:hover {
+    background-color: #0056b3;
+}
+
+.admin-nav {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 1rem;
+}
+
+.tab-btn {
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    padding: 0.75rem 1.5rem;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #333;
+}
+
+.tab-btn.active {
+    background-color: #007bff;
+    color: white;
+    border-color: #007bff;
+}
+
+.tab-content {
+    margin-top: 2rem;
+}
+
+.tab-content h2 {
+    color: #007bff;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+}
+
+th, td {
+    border: 1px solid #e0e0e0;
+    padding: 0.75rem;
+    text-align: left;
+    font-size: 0.95rem;
+}
+
+th {
+    background-color: #f8f9fa;
+    font-weight: 600;
+    color: #333;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tbody tr:hover {
+    background-color: #e8f4fd;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    max-width: 600px;
+    background-color: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+}
+
+form input, form select, form textarea {
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    background-color: #ffffff;
+}
+
+form textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+form button[type="submit"] {
+    align-self: flex-start;
+    margin-top: 0.5rem;
+}
+
+#subject-list {
+    margin-bottom: 2rem;
+}
+
+#subject-list h3 {
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+#subject-buttons {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+#subject-buttons button {
+    background-color: #28a745;
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#subject-buttons button:hover {
+    background-color: #218838;
+}
+
+#generate-code-form {
+    background-color: #e9ecef;
+    padding: 1rem;
+    border-radius: 4px;
+    margin-top: 1rem;
+}
+
+#selected-subject {
+    font-weight: 600;
+    color: #007bff;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .admin-section {
+        padding: 1.5rem;
+        margin: 1rem;
+    }
+    .admin-nav {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    .tab-btn {
+        width: 100%;
+        text-align: center;
+    }
+    table {
+        font-size: 0.85rem;
+    }
+    th, td {
+        padding: 0.5rem;
+    }
+    form {
+        max-width: 100%;
+        padding: 1rem;
+    }
+    #login-form input {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .admin-section {
+        padding: 1rem;
+    }
+    .tab-content h2 {
+        font-size: 1.25rem;
+    }
+    button {
+        padding: 0.5rem;
+        font-size: 0.8rem;
+    }
+    #subject-buttons {
+        flex-direction: column;
+    }
+    #subject-buttons button {
+        width: 100%;
+    }
+}
+
+/* Admin Panel Styles - Vibrant, Animated, and Modern */
+.admin-section {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: linear-gradient(135deg, #ffffff 0%, #f0f8ff 100%);
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    font-family: 'Roboto', sans-serif;
+    animation: fadeIn 0.8s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+#login-form {
+    text-align: center;
+    padding: 2rem;
+    background: linear-gradient(135deg, #007bff, #00d4ff);
+    border-radius: 12px;
+    color: white;
+}
+
+#login-form h1 {
+    color: white;
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+#login-form input {
+    display: block;
+    margin: 1rem auto;
+    padding: 0.75rem;
+    width: 100%;
+    max-width: 350px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    background-color: #f9f9f9;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+#login-form input:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+}
+
+#login-form button {
+    background-color: #28a745;
+    color: white;
+    padding: 0.75rem 2rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+#login-form button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(40, 167, 69, 0.6);
+}
+
+.admin-nav {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 1rem;
+}
+
+.tab-btn {
+    background: linear-gradient(45deg, #f8f9fa, #e9ecef);
+    border: 1px solid #ddd;
+    padding: 0.75rem 1.5rem;
+    cursor: pointer;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #333;
+    transition: all 0.3s ease;
+}
+
+.tab-btn.active {
+    background: linear-gradient(45deg, #007bff, #00d4ff);
+    color: white;
+    border-color: #007bff;
+    box-shadow: 0 4px 12px rgba(0, 123, 255, 0.4);
+}
+
+.tab-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.tab-content {
+    margin-top: 2rem;
+    animation: fadeIn 0.5s ease-in;
+}
+
+.tab-content h2 {
+    color: #007bff;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+    border: 1px solid #e0e0e0;
+    padding: 0.75rem;
+    text-align: left;
+    font-size: 0.95rem;
+    transition: background-color 0.3s;
+}
+
+th {
+    background: linear-gradient(45deg, #f8f9fa, #e9ecef);
+    font-weight: 600;
+    color: #333;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tbody tr:hover {
+    background-color: #e8f4fd;
+    transform: scale(1.01);
+}
+
+button {
+    background: linear-gradient(45deg, #007bff, #00d4ff);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 123, 255, 0.4);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    max-width: 600px;
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+form input, form select, form textarea {
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    background-color: #ffffff;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+form input:focus, form select:focus, form textarea:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+}
+
+form textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+form button[type="submit"] {
+    align-self: flex-start;
+    margin-top: 0.5rem;
+    background: linear-gradient(45deg, #28a745, #20c997);
+}
+
+form button[type="submit"]:hover {
+    box-shadow: 0 0 15px rgba(40, 167, 69, 0.6);
+}
+
+#subject-list {
+    margin-bottom: 2rem;
+}
+
+#subject-list h3 {
+    color: #333;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+#subject-buttons {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+#subject-buttons button {
+    background: linear-gradient(45deg, #ffc107, #fd7e14);
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#subject-buttons button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(255, 193, 7, 0.6);
+}
+
+#generate-code-form {
+    background: linear-gradient(135deg, #e9ecef, #f8f9fa);
+    padding: 1rem;
+    border-radius: 8px;
+    margin-top: 1rem;
+    border: 1px solid #ddd;
+}
+
+#selected-subject {
+    font-weight: 600;
+    color: #007bff;
+}
+
+.bounce-in {
+    animation: bounceIn 0.8s ease-out;
+}
+
+@keyframes bounceIn {
+    0% { opacity: 0; transform: scale(0.3); }
+    50% { opacity: 1; transform: scale(1.05); }
+    70% { transform: scale(0.9); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .admin-section {
+        padding: 1.5rem;
+        margin: 1rem;
+    }
+    .admin-nav {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    .tab-btn {
+        width: 100%;
+        text-align: center;
+    }
+    table {
+        font-size: 0.85rem;
+    }
+    th, td {
+        padding: 0.5rem;
+    }
+    form {
+        max-width: 100%;
+        padding: 1rem;
+    }
+    #login-form input {
+        max-width: 100%;
+    }
+    #subject-buttons {
+        flex-direction: column;
+    }
+    #subject-buttons button {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .admin-section {
+        padding: 1rem;
+    }
+    .tab-content h2 {
+        font-size: 1.25rem;
+    }
+    button {
+        padding: 0.5rem;
+        font-size: 0.8rem;
+    }
+    #login-form h1 {
+        font-size: 1.8rem;
+    }
+}
+
+/* Force visibility for codes table */
+#codes-table {
+    display: table !important;
+    visibility: visible !important;
+}
+
+.table-wrapper {
+    overflow-x: auto; /* Allow horizontal scroll if needed */
+    display: block !important;
+    visibility: visible !important;
+}
+
+
+/* Exam Page Styles */
+.exam-section {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    font-family: 'Roboto', sans-serif;
+    animation: fadeIn 0.8s ease-in;
+}
+
+#code-entry, #exam-content, #results {
+    text-align: center;
+}
+
+#code-entry input {
+    padding: 0.75rem;
+    width: 100%;
+    max-width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+#code-entry button, #submit-exam-btn, #retake-btn {
+    background-color: #007bff;
+    color: white;
+    padding: 0.75rem 2rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 1rem;
+    transition: transform 0.3s;
+}
+
+#code-entry button:hover, #submit-exam-btn:hover, #retake-btn:hover {
+    transform: scale(1.05);
+}
+
+#timer {
+    font-size: 1.5rem;
+    color: #dc3545;
+    margin-bottom: 2rem;
+}
+
+.question {
+    margin-bottom: 2rem;
+    padding: 1rem;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+}
+
+.question h3 {
+    color: #007bff;
+    margin-bottom: 1rem;
+}
+
+.question label {
+    display: block;
+    margin: 0.5rem 0;
+    font-size: 1rem;
+}
+
+.question input[type="radio"] {
+    margin-right: 0.5rem;
+}
+
+#results p {
+    font-size: 1.2rem;
+    margin: 1rem 0;
+}
+
+#breakdown {
+    margin-top: 1rem;
+    font-weight: 500;
+}
+
+/* Mobile Responsiveness for Exam */
+@media (max-width: 768px) {
+    .exam-section {
+        padding: 1.5rem;
+        margin: 1rem;
+    }
+    #timer {
+        font-size: 1.2rem;
+    }
+    .question {
+        padding: 0.75rem;
+    }
+    .question h3 {
+        font-size: 1.1rem;
+    }
+    .question label {
+        font-size: 0.9rem;
+    }
+    #code-entry input {
+        max-width: 100%;
+    }
+    button {
+        width: 100%;
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .exam-section {
+        padding: 1rem;
+    }
+    #timer {
+        font-size: 1rem;
+    }
+    .question h3 {
+        font-size: 1rem;
+    }
+}

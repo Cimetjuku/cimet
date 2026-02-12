@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Register for Cimet Juku JAMB classes. Secure online registration with payment options.">
+    <title>Register Now - Cimet Juku Tutorial Center</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<header>
+    <nav>
+        <div class="nav-container">
+            <h1 class="logo">Cimet Juku</h1>
+            <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="subjects.html">Subjects</a></li>
+                <li><a href="schedule.html">Schedule & Fees</a></li>
+                <li><a href="why-choose.html">Why Choose Us</a></li>
+                <li><a href="exams.html">Exams & Tests</a></li>
+                <li><a href="exam.html">Take Exam</a></li>
+                <li><a href="register.html">Register Now</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+    <main>
+        <section class="register-section fade-in">
+            <h1 class="section-title">Register for JAMB Classes</h1>
+            <p class="register-intro slide-up">Secure your spot at Cimet Juku. Fill in your details below for enrollment.</p>
+            <form class="registration-form slide-up" action="https://formspree.io/f/xojnjbdp" method="POST"> <!-- Replace with your Formspree URL -->
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" required>
+
+                <label for="subject">Preferred Subject:</label>
+                <select id="subject" name="subject" required>
+                    <option value="">Select Subject</option>
+                    <option value="mathematics">Mathematics</option>
+                    <option value="english">English Language</option>
+                    <option value="physics">Physics</option>
+                    <option value="chemistry">Chemistry</option>
+                    <option value="biology">Biology</option>
+                    <option value="organic-chemistry">Organic Chemistry</option>
+                    <option value="art">Art Subjects</option>
+                    <option value="commercial">Commercial Subjects</option>
+                </select>
+
+                <label for="payment">Payment Method:</label>
+                <select id="payment" name="payment" required>
+                    <option value="">Select Payment</option>
+                    <option value="transfer">Bank Transfer</option>
+                    <option value="paystack">Paystack (Online)</option>
+                </select>
+
+                <div id="account-details" style="display: none;">
+                    <p><strong>Account Number:</strong> 8060581946</p>
+                    <p><strong>Bank:</strong> Opay</p>
+                    <p><strong>Account Name:</strong> Aladeyelu Muyiwa</p>
+                </div>
+
+                <button type="submit" class="cta-primary">Submit Registration</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Cimet Juku Tutorial Center. All rights reserved. | <a href="contact.html">Contact Us</a></p>
+    </footer>
+
+    <a href="https://wa.me/09166792849" class="whatsapp-float">💬</a>
+
+    <script src="script.js"></script>
+</body>
+</html>

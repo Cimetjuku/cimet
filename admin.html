@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Admin Dashboard for Cimet Juku Tutorial Center.">
+    <title>Admin Dashboard - Cimet Juku</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<section class="admin-section fade-in">
+    <div id="login-form">
+        <h1>🔐 Admin Login</h1>
+        <input type="email" id="email" placeholder="Email" required>
+        <input type="password" id="password" placeholder="Password" required>
+        <button id="login-btn" class="bounce-in">Login</button>
+    </div>
+    <div id="dashboard" style="display: none;">
+        <h1>📊 Admin Dashboard</h1>
+        <nav class="admin-nav">
+            <button class="tab-btn active" data-tab="students">👥 Students</button>
+            <button class="tab-btn" data-tab="subjects">📚 Subjects</button>
+            <button class="tab-btn" data-tab="questions">❓ Questions</button>
+            <button class="tab-btn" data-tab="codes">🎫 Exam Codes</button>
+            <button class="tab-btn" data-tab="results">📈 Results</button>
+        </nav>
+        <div id="students-tab" class="tab-content">
+            <h2>👥 Student Management</h2>
+            <form id="add-student-form">
+                <input type="text" id="student-name" placeholder="Student Name" required>
+                <input type="email" id="student-email" placeholder="Email" required>
+                <select id="student-status" required>
+                    <option value="pending">Pending</option>
+                    <option value="approved">Approved</option>
+                    <option value="rejected">Rejected</option>
+                </select>
+                <select id="student-payment" required>
+                    <option value="pending">Pending</option>
+                    <option value="verified">Verified</option>
+                </select>
+                <button type="submit">Add Student</button>
+            </form>
+            <p>Total Registered: <span id="total-students">0</span></p>
+            <div class="table-wrapper">
+                <table id="students-table">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Status</th>
+                            <th>Payment</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+        <div id="subjects-tab" class="tab-content" style="display: none;">
+            <h2>📚 Subject Management</h2>
+            <form id="add-subject-form">
+                <label for="subject-name">Subject Name:</label>
+                <input type="text" id="subject-name" placeholder="Type custom name or select below" required>
+                <label for="subject-dropdown">Or Select Predefined:</label>
+                <select id="subject-dropdown">
+                    <option value="">Select Subject</option>
+                    <option value="Science">Science</option>
+                    <option value="Art">Art</option>
+                    <option value="Commercial">Commercial</option>
+                </select>
+                <input type="number" id="subject-duration" placeholder="Duration (hours)" required>
+                <input type="number" id="subject-questions" placeholder="Number of Questions" required>
+                <button type="submit">Add Subject</button>
+            </form>
+            <div class="table-wrapper">
+                <table id="subjects-table">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Duration</th>
+                            <th>Questions</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+        <div id="questions-tab" class="tab-content" style="display: none;">
+            <h2>❓ Question Management</h2>
+            <form id="add-question-form">
+                <textarea id="question-text" placeholder="Question Text" required></textarea>
+                <input type="text" id="option1" placeholder="Option 1" required>
+                <input type="text" id="option2" placeholder="Option 2" required>
+                <input type="text" id="option3" placeholder="Option 3" required>
+                <input type="text" id="option4" placeholder="Option 4" required>
+                <select id="correct-answer" required>
+                    <option value="">Select Correct Answer</option>
+                    <option value="0">Option 1</option>
+                    <option value="1">Option 2</option>
+                    <option value="2">Option 3</option>
+                    <option value="3">Option 4</option>
+                </select>
+                <select id="question-subject" required></select>
+                <button type="submit" id="submit-question-btn">Add Question</button>
+                <button type="button" id="cancel-edit-btn" style="display: none;">Cancel Edit</button>
+            </form>
+            <input type="file" id="csv-upload" accept=".csv">
+            <button id="upload-csv-btn">Upload CSV</button>
+            <div class="table-wrapper">
+                <table id="questions-table">
+                    <thead>
+                        <tr>
+                            <th>Subject</th>
+                            <th>#</th>
+                            <th>Question</th>
+                            <th>Options</th>
+                            <th>Correct</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+        <div id="codes-tab" class="tab-content" style="display: none;">
+            <h2>🎫 Exam Code Management</h2>
+            <div id="subject-list">
+                <h3>Select up to 4 Subjects for Code:</h3>
+                <div id="subject-checkboxes"></div>
+                <p>Selected: <span id="selected-count">0</span>/4</p>
+            </div>
+            <form id="generate-code-form">
+                <p>Selected Subjects: <span id="selected-subjects"></span></p>
+                <input type="number" id="exam-duration" placeholder="Overall Exam Duration (minutes)" required>
+                <button type="submit">Generate Code</button>
+            </form>
+            <div class="table-wrapper">
+                <table id="codes-table">
+                    <thead>
+                        <tr>
+                            <th>Code</th>
+                            <th>Subjects</th>
+                            <th>Duration</th>
+                            <th>Used</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+        <div id="results-tab" class="tab-content" style="display: none;">
+            <h2>📈 Results</h2>
+            <select id="filter-subject">
+                <option value="">All Subjects</option>
+            </select>
+            <button id="export-csv-btn">Export CSV</button>
+            <div class="table-wrapper">
+                <table id="results-table">
+                    <thead>
+                        <tr>
+                            <th>Student</th>
+                            <th>Overall Score</th>
+                            <th>Subject Breakdown</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>
+<script src="admin.js"></script>
+</body>
+</html>

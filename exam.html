@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Take your exam at Cimet Juku Tutorial Center.">
+    <title>Take Exam - Cimet Juku</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<section class="exam-section fade-in">
+    <div id="code-entry">
+        <h1>Enter Exam Code</h1>
+        <input type="text" id="exam-code" placeholder="Enter your exam code" required>
+        <input type="email" id="student-email" placeholder="Enter your email" required>
+        <button id="start-exam-btn">Start Exam</button>
+    </div>
+    <div id="exam-content" style="display: none;">
+        <h1>Exam in Progress</h1>
+        <div id="timer">Time Remaining: <span id="time-remaining">00:00</span></div>
+        <form id="exam-form">
+            <div id="questions-container"></div>
+            <button type="submit" id="submit-exam-btn">Submit Exam</button>
+        </form>
+    </div>
+    <div id="results" style="display: none;">
+        <h1>Exam Results</h1>
+        <p>Overall Score: <span id="overall-score"></span>%</p>
+        <div id="breakdown"></div>
+        <button id="retake-btn">Retake Exam</button>
+    </div>
+</section>
+<script src="exam.js"></script>
+</body>
+</html>
